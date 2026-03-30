@@ -26,7 +26,7 @@
 ### Способ 1 — Автоматически через install.sh (рекомендуется)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ClaudeNotify
+git clone https://github.com/Ph0enixT1m3/ClaudeNotify
 cd ClaudeNotify
 bash install.sh
 ```
@@ -45,8 +45,13 @@ bash install.sh
 
 ### Способ 2 — Через Claude Code (без git)
 
-Открой файл `INSTALL-PROMPT.md` из архива, скопируй содержимое и вставь в Claude Code.
-Claude сам всё установит и настроит.
+Распакуй архив и напиши Claude Code:
+
+```
+Прочитай файл ~/Desktop/ClaudeNotify-Setup/INSTALL-PROMPT.md и выполни установку
+```
+
+Claude прочитает промпт и сам всё установит и настроит.
 
 ## Как использовать
 
