@@ -39,11 +39,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     func userNotificationCenter(_ c: UNUserNotificationCenter, didReceive r: UNNotificationResponse,
                                 withCompletionHandler done: @escaping () -> Void) {
+        done()
         if let app = NSWorkspace.shared.runningApplications.first(where: {
             $0.bundleIdentifier == "com.microsoft.VSCode"
-        }) { app.activate(options: []) }
+        }) { app.activate(options: [.activateIgnoringOtherApps]) }
         else { NSWorkspace.shared.open(URL(fileURLWithPath: "/Applications/Visual Studio Code.app")) }
-        done(); NSApp.terminate(nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { exit(0) }
     }
     func userNotificationCenter(_ c: UNUserNotificationCenter, willPresent n: UNNotification,
                                 withCompletionHandler done: @escaping (UNNotificationPresentationOptions) -> Void) {
