@@ -23,7 +23,21 @@
 
 ## Установка
 
-### Способ 1 — Автоматически через install.sh (рекомендуется)
+### Способ 1 — Одна команда в Claude Code (рекомендуется)
+
+Напиши в Claude Code:
+
+```
+Прочитай и выполни инструкции из: https://raw.githubusercontent.com/Ph0enixT1m3/ClaudeNotify/main/INSTALL-PROMPT.md
+```
+
+Claude сам скачает инструкции и выполнит всю установку автоматически.
+
+После установки:
+- Если появился запрос разрешений — нажми **Разрешить**
+- **System Settings → Notifications → Claude Code → Alerts**
+
+### Способ 2 — Через install.sh (без Claude Code)
 
 ```bash
 git clone https://github.com/Ph0enixT1m3/ClaudeNotify
@@ -38,20 +52,6 @@ bash install.sh
 4. Настроит хуки в `~/.claude/settings.json`
 5. Скопирует скилл `/setup-project` в `~/.claude/skills/`
 6. Отправит тестовое уведомление
-
-После установки:
-- Если появился запрос разрешений — нажми **Разрешить**
-- **System Settings → Notifications → Claude Code → Alerts**
-
-### Способ 2 — Через Claude Code (без git)
-
-Распакуй архив и напиши Claude Code:
-
-```
-Прочитай файл ~/Desktop/ClaudeNotify-Setup/INSTALL-PROMPT.md и выполни установку
-```
-
-Claude прочитает промпт и сам всё установит и настроит.
 
 ## Как использовать
 
