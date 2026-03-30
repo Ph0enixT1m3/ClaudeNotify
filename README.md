@@ -97,6 +97,27 @@ bash install.sh
 колбэки при клике в Sonoma (14) и Sequoia (15). `UNUserNotificationCenter` —
 современный API, тот же что использует сам macOS.
 
+## Безопасность
+
+ClaudeNotify собирается из открытого исходного кода (`ClaudeNotify-source/main.swift`) прямо на твоём Mac через `swiftc`. Никакие бинарники не скачиваются.
+
+**Ad-hoc подпись (без Apple Developer ID)**
+
+Бинарник подписан ad-hoc (`codesign --sign -`), без Developer ID от Apple. При первом запуске macOS Gatekeeper может показать предупреждение:
+
+> *"ClaudeNotify.app" cannot be opened because the developer cannot be verified*
+
+Чтобы разрешить:
+1. **System Settings → Privacy & Security**
+2. В разделе Security найди сообщение про ClaudeNotify → нажми **Open Anyway**
+
+Либо выполни один раз в терминале:
+```bash
+xattr -dr com.apple.quarantine ~/Applications/ClaudeNotify.app
+```
+
+Это штатный сценарий для любого open-source инструмента без платного Developer ID ($99/год).
+
 ## Troubleshooting
 
 **Уведомления не появляются**
